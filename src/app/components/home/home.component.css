@@ -1,0 +1,41 @@
+main {
+    background-color: #e6eded;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 70px;
+    padding: 20px;
+    text-align: justify;
+}
+
+h1{
+    color: #e6eded;
+}
+
+strong {
+    color: var(--green);
+}
+
+section {
+    margin-top: 20px;
+}
+
+h2 {
+    color: var(--blue-light);
+}
+
+ol {
+    list-style-type: none;
+}
+
+li {
+    counter-increment: item;
+    margin-bottom: 10px;
+}
+
+li::before {
+    content: counter(item);
+    color: var(--blue-light);
+    font-weight: bold;
+    margin-right: 10px;
+}

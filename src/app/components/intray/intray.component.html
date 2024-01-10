@@ -1,0 +1,69 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<main>
+    <h1 class="h1Intray">Intray</h1>
+
+    <section>
+        <p class="fecha">{{fecha}}</p>
+        <div class="input-container">
+            <form class="input-group mb-3" #taskForm="ngForm" (ngSubmit)="addIntray(taskForm)">
+                <input type="text" class="form-control" placeholder="Agregar al Intray" aria-label="New Intray"
+                    aria-describedby="button-addon2" name="nombreIntray" #nombreIntray="ngModel"
+                    [(ngModel)]="IntrayObj.nombreIntray" required>
+                <button class="btn btn-outline-custom" type="submit" id="button-addon2"
+                    [disabled]="!taskForm.form.valid">Agregar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="seccionControl">
+        <ng-container *ngFor="let task of IntrayJson; let indice = index">
+            <div class="divIntray">
+                <button type="button" class="btn btn-primary btnModal" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" (click)="openModal(indice)">
+                    {{indice + 1}}. {{task.nombreIntray}}
+                </button>
+            </div>
+        </ng-container>
+    </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade dark-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{selectedIntray?.nombreIntray}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="formEstado" #estadoForm="ngForm">
+                        <label class="infoProyecto">Seleccionar categoría:</label>
+                        <select class="form-select infoProyecto editSelect" aria-label="Default select example"
+                            [(ngModel)]="selectedCategoria" name="estado" required
+                            (ngModelChange)="onChangeCategoria()">
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="1">Tarea</option>
+                            <option value="2">Proyecto</option>
+                            <option value="3">Para después</option>
+                        </select>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            (click)="changeCategoria()" [disabled]="!estadoForm.form.valid || selectedCategoria == '2'"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Cambiar
+                            estado</button>
+                    </form>
+                    <button type="button" class="btn btn-outline-danger btnBorrar" data-bs-dismiss="modal"
+                        (click)="deleteIntray()">Eliminar del Intray</button>
+                </div>
+                <app-projects [hidden]="!showProjectsComponent"
+                    [initialProjectName]="selectedIntray?.nombreIntray"></app-projects>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

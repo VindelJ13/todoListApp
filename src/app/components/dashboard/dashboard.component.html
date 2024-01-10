@@ -1,0 +1,51 @@
+<section class="firstSection">
+    <div class="card" style="width: 18rem;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-f0k9LKQYARmlxtbBzl76LrHiFbCVHz9hFD7k5JkgGeg6uGF2BkBUbCtm2kXjzDAo0tc&usqp=CAU"
+            class="card-img-top" alt="..." [routerLink]="['/intray']">
+        <div class="card-body">
+            <h5 class="card-title"><strong>Intray</strong></h5>
+            <p class="card-text">Tienes {{intrayCant}} cosas en el Intray</p>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let intray of intrayJson">
+            <li class="list-group-item">{{intray.nombreIntray}}</li>
+        </ul>
+    </div>
+
+    <div class="card secondDiv" style="width: 18rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/8028/8028200.png" class="card-img-top" alt="..."
+            [routerLink]="['/tasks']">
+        <div class="card-body">
+            <h5 class="card-title"><strong>Tareas</strong></h5>
+            <p class="card-text">Tienes {{taskCant}} tareas</p>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let task of taskJson">
+            <li class="list-group-item">{{task.task}}</li>
+        </ul>
+    </div>
+</section>
+
+<section class="secondSection">
+    <div class="card" style="width: 18rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/4358/4358529.png" class="card-img-top" alt="..."
+            [routerLink]="['/list-projects']">
+        <div class="card-body">
+            <h5 class="card-title"><strong>Projectos</strong></h5>
+            <p class="card-text">Tienes {{projectCant}} projectos</p>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let project of projectJson">
+            <li class="list-group-item">{{project.projectName}}</li>
+        </ul>
+    </div>
+
+    <div class="card fourthDiv" style="width: 18rem;">
+        <img src="https://www.svgrepo.com/show/441904/calendar-someday.svg" class="card-img-top" alt="..."
+            [routerLink]="['/someday']">
+        <div class="card-body">
+            <h5 class="card-title"><strong>Para Después</strong></h5>
+            <p class="card-text">Tienes {{somedayCant}} cosas para después</p>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let someday of somedayJson">
+            <li class="list-group-item">{{someday.nombreSomeday}}</li>
+        </ul>
+    </div>
+</section>

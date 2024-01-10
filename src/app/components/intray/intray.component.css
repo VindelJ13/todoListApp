@@ -1,0 +1,98 @@
+/* Estilos personalizados para el modal oscuro */
+.dark-modal .modal-content {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-modal .modal-header {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-modal .modal-footer {
+    background-color: #222;
+    color: #fff;
+}
+
+.input-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+    border: 1px solid #04d4c3;
+    padding: 15px 15px 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .input-container {
+        width: 90%;
+        /* Reduzca el ancho del contenedor en pantallas pequeñas */
+    }
+}
+
+.btn-outline-custom{
+    background-color: var(--green);
+}
+.btn-outline-custom:hover {
+    background-color: #2a8fa8;
+}
+
+.h1Intray {
+    color: var(--greenH1);
+}
+
+.fecha {
+    text-align: center;
+    color: white;
+}
+
+input::placeholder {
+    color: var(--green);
+}
+
+.seccionControl {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 80px auto;
+    /*border: 2px solid #04d4c3;*/
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--green);
+}
+
+.divIntray {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btnModal {
+    text-align: justify;
+    background: linear-gradient(to bottom, #323838, #404d4d);
+    border-color: #2c7b90;
+    margin: 5px auto;
+    max-width: 80%;
+    width: 300px;
+
+}
+
+.btnModal:hover {
+    background: linear-gradient(to bottom, #404d4d, #323838);
+}
+
+.formEstado {
+    display: flex;
+    align-items: center;
+}
+
+.editSelect {
+    width: 65%;
+    margin-left: 10px;
+    margin: 5px;
+}
+
+.btnBorrar {
+    margin-top: 50px;
+}

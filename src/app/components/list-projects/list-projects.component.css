@@ -1,0 +1,125 @@
+/* Estilos personalizados para el modal oscuro */
+.dark-modal .modal-content {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-modal .modal-header {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-modal .modal-footer {
+    background-color: #222;
+    color: #fff;
+}
+
+.h1ListProjects {
+    color: var(--greenH1);
+}
+
+/*Sección proyectos*/
+.infoProyecto {
+    font-size: 18px;
+}
+
+.infoProyectoR {
+    margin-top: 30px;
+}
+
+.formEstado {
+    display: flex;
+    align-items: center;
+}
+
+.editSelect {
+    width: 65%;
+    margin-left: 10px;
+    margin: 5px;
+}
+
+h5 {
+    margin: 30px 0;
+    color: var(--blue-light);
+}
+
+.sectionProyectos {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sectionProyectos button {
+    margin: 10px auto;
+    width: 250px;
+    max-width: 80%;
+    background: linear-gradient(to bottom, #323838, #404d4d);
+    border-color: #2c7b90;
+    text-align: justify;
+}
+
+.sectionProyectos button:hover {
+    background: linear-gradient(to bottom, #404d4d, #323838);
+}
+
+/*Sección tareas*/
+.seccion-tarea h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.seccion-tarea li {
+    display: flex;
+    background: linear-gradient(to bottom, #25c4a2, var(--green));
+    border-radius: 15px;
+    padding: 0 5px;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    max-width: 70%;
+    margin: 5px auto;
+    color: white;
+}
+
+.seccion-tarea li .content-container {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.btnCheck {
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    color: white;
+}
+
+.btnCheck:hover {
+    color: var(--blue-light);
+}
+
+.seccion-tarea>ul p {
+    font-size: 1.2rem;
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+.line-through {
+    text-decoration: line-through;
+    color: var(--blue-light);
+}
+
+.seccion-tarea .btn {
+    margin-top: 100px;
+}
+
+.badges{
+    margin-left: 5px;
+}

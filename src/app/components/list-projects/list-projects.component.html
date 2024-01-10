@@ -1,0 +1,80 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<h1 class="h1ListProjects">Tus Proyectos</h1>
+<!-- Button trigger modal -->
+<ng-container *ngFor="let project of projectJson; let indice = index">
+    <section class="sectionProyectos">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            (click)="openModal(indice)">
+            {{project.projectName}}
+            <span *ngIf="project.estado == '1'" class="badge rounded-pill text-bg-secondary badges float-end">Sin empezar</span>
+            <span *ngIf="project.estado == '2'" class="badge rounded-pill text-bg-warning badges float-end">Pendiente</span>
+            <span *ngIf="project.estado == '3'" class="badge rounded-pill text-bg-success badges float-end">Finalizado</span>
+        </button>
+    </section>
+</ng-container>
+
+<!-- Modal -->
+<div class="modal fade dark-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{selectedProject?.projectName}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="formEstado" #estadoForm="ngForm">
+                    <label class="infoProyecto">Estado:</label>
+                    <select *ngIf="selectedProject?.estado == '1'" class="form-select infoProyecto editSelect"
+                        aria-label="Default select example" [(ngModel)]="selectedEstado" name="estado" required>
+                        <option value="" disabled selected>Sin empezar</option>
+                        <option value="2">Pendiente</option>
+                        <option value="3">Finalizado</option>
+                    </select>
+                    <select *ngIf="selectedProject?.estado == '2'" class="form-select infoProyecto editSelect"
+                        aria-label="Default select example" [(ngModel)]="selectedEstado" name="estado" required>
+                        <option value="" disabled selected>Pendiente</option>
+                        <option value="1">Sin empezar</option>
+                        <option value="3">Finalizado</option>
+                    </select>
+                    <select *ngIf="selectedProject?.estado == '3'" class="form-select infoProyecto editSelect"
+                        aria-label="Default select example" [(ngModel)]="selectedEstado" name="estado" required>
+                        <option value="" disabled selected>Finalizado</option>
+                        <option value="1">Sin empezar</option>
+                        <option value="2">Pendiente</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editEstado()"
+                        [disabled]="!estadoForm.form.valid"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Cambiar
+                        estado</button>
+                </form>
+
+                <p class="infoProyecto infoProyectoR">Resultado: {{selectedProject?.resultado}}</p>
+                <section class="seccion-tarea">
+                    <h5>Tareas: </h5>
+                    <ul>
+                        <li *ngFor="let tarea of selectedProject?.tasks; let indice = index">
+                            <button class="material-symbols-outlined btnCheck" (click)="changeTaskStatus(indice)">
+                                {{tarea.btnStyle}}
+                            </button>
+                            <div class="content-container">
+                                <p class="text" [ngClass]="{'line-through': tarea.realizado}">
+                                    {{ tarea.task }}
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button type="button" class="btn btn-outline-danger"
+                        (click)="deleteProject(selectedProject?._idProject)">Eliminar Proyecto</button>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<main>
+    <h1>Agregar Proyecto</h1>
+    <section>
+        <div class="input-container">
+            <form class="input-group mb-3" #projectForm="ngForm" (ngSubmit)="addProject(projectForm)">
+                <div class="divDatos">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nombre del Proyecto</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Proyecto"
+                            name="projectName" #projectName="ngModel" [(ngModel)]="projectObj.projectName"
+                            [required]="currentRoute == '/projects'"
+                            [value]="initialProjectName ? initialProjectName : null">
+                    </div>
+
+                    <select class="form-select" aria-label="Default select example" name="estado" #estado="ngModel"
+                        [(ngModel)]="projectObj.estado" required>
+                        <option value="" disabled selected>Selecciona un estado</option>
+                        <option value="1">Sin empezar</option>
+                        <option value="2">Pendiente</option>
+                        <option value="3">Finalizado</option>
+                    </select>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Resultado del Proyecto</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="resultado"
+                            #resultado="ngModel" [(ngModel)]="projectObj.resultado" required></textarea>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-outline-custom" type="submit" id="button-addon2"
+                    [disabled]="!projectForm.form.valid" data-bs-dismiss="modal">Agregar Proyecto</button>
+            </form>
+            <form class="formDatosTarea" #taskForm="ngForm" (ngSubmit)="addTask(taskForm)">
+                <input type="text" class="form-control" placeholder="Agregar tarea" aria-label="Recipient's username"
+                    aria-describedby="button-addon2" name="task" #task="ngModel" [(ngModel)]="taskObj.task" required>
+                <button class="btn btn-outline-info" type="submit" id="button-addon2"
+                    [disabled]="!taskForm.form.valid">Agregar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="seccionControl">
+        <div class="seccion-tarea">
+            <h3>Pasos del proyecto:</h3>
+            <ul>
+                <ng-container *ngFor="let task of tasksJson; let indice = index">
+                    <li *ngIf="task.isFromProject">
+                        <div class="content-container">
+                            <p class="text" [ngClass]="{'line-through': task.realizado}">
+                                {{ task.task }}
+                            </p>
+                        </div>
+                        <button class="material-symbols-outlined btnBorrar" (click)="deleteTask(indice)">
+                            delete
+                        </button>
+
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+
+    </section>
+</main>

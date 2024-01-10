@@ -1,0 +1,29 @@
+h1 {
+    color: var(--greenH1);
+    margin-bottom: 20px;
+}
+
+table {
+    width: 95%;
+    max-width: 1000px;
+    margin: 10px auto 80px auto;
+}
+
+table thead th {
+    background-color: var(--greenH1);
+    color: white;
+    text-align: left;
+}
+
+button {
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    color: var(--greenH1);
+}
+
+button:hover {
+    color: #b3292e;
+}

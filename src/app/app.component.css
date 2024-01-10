@@ -1,0 +1,13 @@
+.btn-outline-custom {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.actived {
+    background-color: var(--greenH1);
+}

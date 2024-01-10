@@ -1,0 +1,93 @@
+.input-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+    border: 1px solid #04d4c3;
+    padding: 15px 15px 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .input-container {
+        width: 90%;
+        /* Reduzca el ancho del contenedor en pantallas pequeñas */
+    }
+}
+
+h1 {
+    color: var(--greenH1);
+}
+
+.fecha {
+    text-align: center;
+    color: white;
+}
+
+input::placeholder {
+    color: var(--green);
+}
+
+/*Sección tareas*/
+.seccion-tarea h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.seccionControl {
+    margin-bottom: 80px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.seccion-tarea li {
+    display: flex;
+    background: linear-gradient(to bottom, #25c4a2, var(--green));
+    border-radius: 15px;
+    padding: 0 5px;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    max-width: 70%;
+    margin: 5px auto;
+    color: white;
+}
+
+.seccion-tarea li .content-container {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.btnBorrar,
+.btnCheck {
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    color: white;
+}
+
+.btnBorrar:hover {
+    color: #b3292e;
+}
+
+.btnCheck:hover {
+    color: var(--blue-light);
+}
+
+.seccion-tarea>ul p {
+    font-size: 1.2rem;
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+
+.line-through {
+    text-decoration: line-through;
+    color: var(--blue-light);
+}
