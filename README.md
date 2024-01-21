@@ -7,6 +7,7 @@ Este proyecto es una aplicación web desarrollada con Angular que ofrece una sol
 ## Technologies Used
 - Angular 17.
 - Bootstrap.
+- LocalStorage.
 - Font Awesome.
 - SweetAlert2.
 
