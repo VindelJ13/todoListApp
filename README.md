@@ -18,7 +18,7 @@ Asegúrate de tener instalado Node.js y npm en tu sistema.
 
 1. Clona el repositorio o descarga el proyecto.
 ```
-git clone https://github.com/tu-usuario/todo-list-app.git
+git clone https://github.com/VindelJ13/todoListApp.git
 ```
 2. Navega al directorio del proyecto e instala las dependencias.
 ```
