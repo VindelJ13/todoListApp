@@ -11,6 +11,9 @@ Este proyecto es una aplicación web desarrollada con Angular que ofrece una sol
 - Font Awesome.
 - SweetAlert2.
 
+## Quick Access
+https://taskgtd.netlify.app/tasks
+
 ## Installation
 Asegúrate de tener instalado Node.js y npm en tu sistema.
 
