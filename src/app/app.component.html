@@ -12,17 +12,17 @@
       </div>
       <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
         <button type="button" class="btn btn-outline-success mb-2" [routerLink]="['/dashboard']"
-          [routerLinkActive]="['actived']">Dashboard</button>
+          [routerLinkActive]="['actived']" (click)="closeOffcanvas()">Dashboard</button>
         <button type="button" class="btn btn-outline-custom mb-2 btn-custom-color" [routerLink]="['/intray']"
-          [routerLinkActive]="['actived']">Intray</button>
+          [routerLinkActive]="['actived']" (click)="closeOffcanvas()">Intray</button>
         <button type="button" class="btn btn-primary btn btn-dark" [routerLink]="['/tasks']"
-          [routerLinkActive]="['actived']">Tareas</button>
+          [routerLinkActive]="['actived']" (click)="closeOffcanvas()">Tareas</button>
         <button type="button" class="btn btn-primary btn btn-dark" [routerLink]="['/list-projects']"
-          [routerLinkActive]="['actived']">Ver Proyectos</button>
+          [routerLinkActive]="['actived']" (click)="closeOffcanvas()">Ver Proyectos</button>
         <!--button type="button" class="btn btn-primary btn btn-dark" [routerLink]="['/projects']"
-          [routerLinkActive]="['actived']">Agregar Proyecto</button-->
+          [routerLinkActive]="['actived']" (click)="closeOffcanvas()">Agregar Proyecto</button-->
         <button type="button" class="btn btn-primary btn btn-dark" [routerLink]="['/someday']"
-          [routerLinkActive]="['actived']">Para después</button>
+          [routerLinkActive]="['actived']" (click)="closeOffcanvas()">Para después</button>
       </div>
     </div>
 
